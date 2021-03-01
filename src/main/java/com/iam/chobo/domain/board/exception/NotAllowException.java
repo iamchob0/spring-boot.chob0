@@ -10,6 +10,6 @@ public class NotAllowException extends BusinessException {
     private static final long serialVersionUID = 6028953352970261384L;
 
     public NotAllowException(){
-        super(ErrorCode.METHOD_NOT_ALLOWED);
+        super(ErrorCode.HANDLE_ACCESS_DENIED);
     }
 }

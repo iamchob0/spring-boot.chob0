@@ -33,8 +33,12 @@ public class BoardController {
 
     @PostMapping("/")
     public String createBoard(@RequestBody @Valid final BoardDto board) {
-        boardService.createBoard(board);
-        return "ok";
+        String nullStr = null;
+    
+        // nullStr.equals("");
+        throw new NotAllowException();
+        // boardService.createBoard(board);
+        // return "ok";
     }
 
     @PutMapping("/")

@@ -1,7 +1,6 @@
 package com.iam.chobo.domain.board;
 
 import com.iam.chobo.domain.board.exception.NotAllowException;
-import com.iam.chobo.global.error.ErrorCode;
 import com.iam.chobo.global.error.ErrorResponse;
 
 import org.springframework.http.HttpStatus;
@@ -18,8 +17,8 @@ public class BoardExceptionHandler {
 
     @ExceptionHandler(NotAllowException.class)
     public ResponseEntity<ErrorResponse>  NotAllowExceptionException(NotAllowException e) {
-        log.error("NotAllowExceptionException", e);
-        final ErrorResponse response = ErrorResponse.of(ErrorCode.HANDLE_ACCESS_DENIED);
+        log.error("NotAllowExceptionException {}", e);
+        final ErrorResponse response = ErrorResponse.of(e.getErrorCode());
         return new ResponseEntity<>(response, HttpStatus.NOT_ACCEPTABLE);
     }
 
