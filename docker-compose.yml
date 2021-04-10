@@ -1,0 +1,19 @@
+version: "3"
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: chobo
+      MYSQL_ROOT_PASSWORD: chobo
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - ./db/:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306        
+
+  # app:
+  #   build: .
+  #   ports:
+  #     - 8080:8080
+  #   depends_on:
+  #     - db
