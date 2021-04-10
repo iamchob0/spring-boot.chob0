@@ -4,6 +4,8 @@ services:
     image: mysql:5.7
     environment:
       MYSQL_DATABASE: chobo
+      MYSQL_USER: chobo
+      MYSQL_PASSWORD: chobo
       MYSQL_ROOT_PASSWORD: chobo
       MYSQL_ROOT_HOST: '%'
     volumes:
